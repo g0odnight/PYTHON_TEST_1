@@ -1,3 +1,5 @@
+from math import *
+
 # Turimas "users" masyvas. 
 
 # Parašykite funkcijas, kurios atlikas nurodytas užduotis:
@@ -19,3 +21,32 @@ users = [
   { "id": '8', "name": 'Simon Peterson', "age": 30 },
   { "id": '9', "name": 'Daniel Cane', "age": 51 },
 ]
+
+#1 
+print('------------------------------------------------------------')
+
+
+def getUserAverageAge(users): 
+    count = 0
+    for i in users:
+      count += i["age"]
+      avg = count/len(users)
+      print(round(avg, 2))
+    
+getUserAverageAge(users)
+
+#2 
+print('------------------------------------------------------------')
+
+
+def filterAdults(users): 
+    usersName =[]
+    for i in users:
+          usersName.append(i["name"])
+          sortedUsersNames = sorted(usersName)
+    print(usersName)
+    print(sortedUsersNames)
+
+filterAdults(users)
+
+print('------------------------------------------------------------')
