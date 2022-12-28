@@ -1,4 +1,6 @@
-from math import *
+from operator import *
+import operator
+
 
 # Turimas "users" masyvas. 
 
@@ -25,14 +27,11 @@ users = [
 #1 
 print('------------------------------------------------------------')
 
-
 def getUserAverageAge(users): 
-    count = 0
-    for i in users:
-      count += i["age"]
-      avg = count/len(users)
-      print(round(avg, 2))
-    
+    usersAgeAverage = sum(item['age'] for item in users) / len(users)
+    print('The average age of all users is:',round(usersAgeAverage, 2))
+    print(type(usersAgeAverage))
+
 getUserAverageAge(users)
 
 #2 
@@ -44,7 +43,6 @@ def filterAdults(users):
     for i in users:
           usersName.append(i["name"])
           sortedUsersNames = sorted(usersName)
-    print(usersName)
     print(sortedUsersNames)
 
 filterAdults(users)
